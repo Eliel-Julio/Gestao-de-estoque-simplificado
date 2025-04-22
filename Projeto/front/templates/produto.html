@@ -2,6 +2,11 @@
     <h2>{{ produto.nome }}</h2>
     <p>Quantidade: {{ produto.quant }}</p>
     <p>Preço: <span>R$ {{ produto.precoVenda }}</span></p>
-    <button>Baixa</button>
-    <button>Compra</button>
+
+    <form action="{{ url_for('baixa_produto',id=produto.id, quant=1) }}" method="POST">
+        <button class="Baixa">Baixa</button>
+    </form>
+    <form action="{{ url_for('subir_produto',id=produto.id, quant=1) }}" method="POST">
+        <button class="Compra">Compra</button>
+    </form>
 </div>
